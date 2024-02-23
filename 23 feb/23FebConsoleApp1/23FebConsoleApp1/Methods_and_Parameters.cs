@@ -30,5 +30,35 @@ namespace _23FebConsoleApp1
             division = num1 / num2;
             return num1 + num2;
         }
+
+        //params array example 1:
+        public int addElem(params int[] arr)
+        {
+            int sum = 0;
+            foreach(int n in arr)
+            {
+                sum += n;
+            }
+            return sum;
+        }
+
+        public void param_method2(params int[] num)
+        {
+            Console.WriteLine("There are {0} number of elements in the Array", num.Length);
+            foreach (int i in num)
+            {
+                Console.WriteLine(i);
+            }
+
+        }
+        public void param_method3(int i, float f, params double[] d)
+        {
+            Console.WriteLine("{0}, {0}", i, f);
+
+            foreach(double dbl in d)
+            {
+                Console.WriteLine(dbl);
+            }
+        }
     }
 }

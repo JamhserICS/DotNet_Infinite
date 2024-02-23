@@ -28,6 +28,29 @@ namespace _23FebConsoleApp1
             int total = 0, prod, diff, div;
             total = mp.calcu_fun(10, 15, out diff, out prod, out div);
             Console.WriteLine($"Sum of 10 and 15 is {total}, product is {prod}, difference is {diff}, Division is {div}");
+            Console.WriteLine("-----Params example-----");  
+            
+            total = mp.addElem(); //calling with zero arguments
+            Console.WriteLine("The Total is {0}", total);
+            Console.WriteLine("----------------");
+
+            total = mp.addElem(7);  //calling the function with one argument
+            Console.WriteLine("The Total is {0}", total);
+            Console.WriteLine("----------------");
+
+            total = mp.addElem(2, 9, 5, 8, 10, 33);
+            Console.WriteLine("The Total is {0}", total);
+
+            Console.WriteLine("--------2nd Params Example Output------");
+            mp.param_method2();
+
+            int[] testarray = new int[] { 10, 20, 30 };
+            mp.param_method2(testarray);
+            mp.param_method2(2, 4, 6, 8, 10, 12);
+
+            mp.param_method3(1, 3.5f);
+            mp.param_method3(5, 6.5f, 12.50, 40.5);
+            
             Console.ReadKey();
         }
 
