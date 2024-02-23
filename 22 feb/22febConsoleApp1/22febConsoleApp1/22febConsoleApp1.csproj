@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FED3B04-D8AE-4758-BC40-BF9AAD3C2BF7}</ProjectGuid>
+    <ProjectGuid>{1FF6DD24-7995-43EB-9EE0-26D7146AF7D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_23FebConsoleApp1</RootNamespace>
-    <AssemblyName>23FebConsoleApp1</AssemblyName>
+    <RootNamespace>_22febConsoleApp1</RootNamespace>
+    <AssemblyName>22febConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>_23FebConsoleApp1.Array_Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,10 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Array_Program.cs" />
-    <Compile Include="Methods_and_Parameters.cs" />
+    <Compile Include="Program_Constructs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="String_Program.cs" />
+    <Compile Include="Static_Instance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

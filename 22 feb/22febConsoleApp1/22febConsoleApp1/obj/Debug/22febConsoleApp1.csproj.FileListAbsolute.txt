@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\obj\Debug\22febConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\obj\Debug\22febConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\bin\Debug\22febConsoleApp1.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\bin\Debug\22febConsoleApp1.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\bin\Debug\22febConsoleApp1.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\obj\Debug\22febConsoleApp1.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\22 feb\22febConsoleApp1\22febConsoleApp1\obj\Debug\22febConsoleApp1.pdb
