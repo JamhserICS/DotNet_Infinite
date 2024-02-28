@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\bin\Debug\28Feb_Test_Solution.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\bin\Debug\28Feb_Test_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\bin\Debug\28Feb_Test_Solution.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\obj\Debug\28Feb_Test_Solution.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\obj\Debug\28Feb_Test_Solution.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\obj\Debug\28Feb_Test_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\28Feb_Test_Solution\28Feb_Test_Solution\obj\Debug\28Feb_Test_Solution.pdb
