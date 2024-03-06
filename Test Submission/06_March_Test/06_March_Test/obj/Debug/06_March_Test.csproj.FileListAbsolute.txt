@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\obj\Debug\06_March_Test.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\obj\Debug\06_March_Test.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\bin\Debug\06_March_Test.exe.config
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\bin\Debug\06_March_Test.exe
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\bin\Debug\06_March_Test.pdb
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\obj\Debug\06_March_Test.exe
+C:\Users\jamshers\Desktop\Practice\06_March_Test\06_March_Test\obj\Debug\06_March_Test.pdb
