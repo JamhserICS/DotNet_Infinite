@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\bin\Debug\Assignment_3_Solution.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\bin\Debug\Assignment_3_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\bin\Debug\Assignment_3_Solution.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\obj\Debug\Assignment_3_Solution.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\obj\Debug\Assignment_3_Solution.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\obj\Debug\Assignment_3_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_3_Solution\Assignment_3_Solution\obj\Debug\Assignment_3_Solution.pdb

@@ -1,7 +1,0 @@
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\bin\Debug\27FebConsoleApp.exe.config
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\bin\Debug\27FebConsoleApp.exe
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\bin\Debug\27FebConsoleApp.pdb
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\obj\Debug\27FebConsoleApp.csproj.AssemblyReference.cache
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\obj\Debug\27FebConsoleApp.csproj.CoreCompileInputs.cache
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\obj\Debug\27FebConsoleApp.exe
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp\obj\Debug\27FebConsoleApp.pdb

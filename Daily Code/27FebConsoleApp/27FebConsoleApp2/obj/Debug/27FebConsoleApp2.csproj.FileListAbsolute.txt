@@ -1,2 +1,0 @@
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp2\obj\Debug\27FebConsoleApp2.csproj.AssemblyReference.cache
-C:\Users\jamshers\Desktop\DotNet tutorial\27FebConsoleApp\27FebConsoleApp2\obj\Debug\27FebConsoleApp2.csproj.CoreCompileInputs.cache

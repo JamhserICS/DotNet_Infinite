@@ -1,7 +1,0 @@
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe.config
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.pdb
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.AssemblyReference.cache
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.CoreCompileInputs.cache
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.exe
-C:\Users\jamshers\Desktop\Net tutorial\21 feb\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.pdb
