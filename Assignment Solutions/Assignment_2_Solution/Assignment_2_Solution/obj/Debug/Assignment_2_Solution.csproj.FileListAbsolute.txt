@@ -1,0 +1,6 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\bin\Debug\Assignment_2_Solution.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\bin\Debug\Assignment_2_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\bin\Debug\Assignment_2_Solution.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\obj\Debug\Assignment_2_Solution.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\obj\Debug\Assignment_2_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_2_Solution\Assignment_2_Solution\obj\Debug\Assignment_2_Solution.pdb

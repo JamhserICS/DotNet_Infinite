@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\bin\Debug\26FebProject(Test).exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\bin\Debug\26FebProject(Test).exe
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\bin\Debug\26FebProject(Test).pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\obj\Debug\26FebProject(Test).csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\obj\Debug\26FebProject(Test).csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\obj\Debug\26FebProject(Test).exe
+C:\Users\jamshers\Desktop\DotNet tutorial\26FebProject(Test)\26FebProject(Test)\obj\Debug\26FebProject(Test).pdb
