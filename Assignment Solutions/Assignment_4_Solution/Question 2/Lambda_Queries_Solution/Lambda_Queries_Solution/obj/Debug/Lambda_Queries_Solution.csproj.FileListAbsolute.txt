@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\bin\Debug\Lambda_Queries_Solution.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\bin\Debug\Lambda_Queries_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\bin\Debug\Lambda_Queries_Solution.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\obj\Debug\Lambda_Queries_Solution.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\obj\Debug\Lambda_Queries_Solution.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\obj\Debug\Lambda_Queries_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 2\Lambda_Queries_Solution\Lambda_Queries_Solution\obj\Debug\Lambda_Queries_Solution.pdb

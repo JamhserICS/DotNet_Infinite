@@ -1,0 +1,6 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\bin\Debug\Concession.dll
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\bin\Debug\Concession.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\obj\Debug\Concession.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\obj\Debug\Concession.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\obj\Debug\Concession.dll
+C:\Users\jamshers\Desktop\DotNet tutorial\Assignment Solutions\Assignment_4_Solution\Question 1\Concession\Concession\obj\Debug\Concession.pdb
