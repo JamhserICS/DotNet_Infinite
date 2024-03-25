@@ -13,7 +13,7 @@ begin
         set @temp = @temp + 1
     end
 
-    print 'factorial of ' + cast(@number as varchar(10)) + ' is: ' + cast(@fact as varchar(50)); --for printing the result
+    print 'factorial of ' + cast(@number as varchar(10)) + ' is: ' + cast(@fact as varchar(50)) --for printing the result
 end
 
 exec cal_factorial 4 --executing the calfactorial
@@ -26,26 +26,26 @@ exec cal_factorial 4 --executing the calfactorial
 create or alter procedure gen_Mul_Tables (@num int) --creating gen_Mul_Tables 
 as
 begin
-    declare @temp int = 1;
-    declare @temp2 int;
+    declare @temp int = 1
+    declare @temp2 int
 
     while @temp <= @num
     begin
         print 'multiplication table ' + cast(@temp as varchar(10)) + ':'
-        set @temp2 = 1;
+        set @temp2 = 1
         while @temp2 <= 10
         begin
 		    ----give ouput in this format: 1 x 1 = 1
             print cast(@temp as varchar(10)) + ' x ' + cast(@temp2 as varchar(10)) + ' = ' + cast(@temp * @temp2 as varchar(10)) 
 
-            set @temp2 = @temp2 + 1;
+            set @temp2 = @temp2 + 1
         end
         print '' -- adding a line break between tables
-        set @temp = @temp + 1;
+        set @temp = @temp + 1
     end
-end;
+end
 
-exec gen_Mul_Tables 5;
+exec gen_Mul_Tables 5
 
 
 
@@ -57,7 +57,7 @@ exec gen_Mul_Tables 5;
 create table holiday (
     hol_date date primary key,
     hol_name varchar(50)
-);
+)
 
 
 -- insert some holiday details
@@ -78,12 +78,12 @@ on employees
 after insert, update, delete --trigger will happen after an insert, update, or delete operation on the employees table.
 as
 begin
-    declare @hol_count int; --declaring the holiday cout type integer
+    declare @hol_count int --declaring the holiday cout type integer
 
     -- Check if the current date is a holiday
     select @hol_count = count(*)
     from holiday
-    where hol_date = convert(date, getdate());
+    where hol_date = convert(date, getdate())
 
     if @hol_count > 0
     begin
@@ -91,30 +91,30 @@ begin
         rollback; --Rollbac the current transaction, undoing any changes made by the insert, update, or delete operation.
         
         -- Display the error message
-        declare @hol_name varchar(50);
+        declare @hol_name varchar(50)
         select @hol_name = hol_name
         from holiday
         where hol_date = convert(date, getdate());
 
         -- Print the error message
-        print 'Due to ' + @hol_name + ', you cannot manipulate data.';
+        print 'Due to ' + @hol_name + ', you cannot manipulate data.'
     end
 end --ending trigger body
 
 
---select*from holiday;
---select*from employees;
+--select*from holiday
+--select*from employees
 
 
 -- Insert some test data into the employees table
 --today is 25-03-24 so inset, update and delete will give error message:- "Due to Holi, you cannot manipulate data."
-insert into employees (empno, ename, salary) values (1013, 'John', 50000);
+insert into employees (empno, ename, salary) values (1013, 'John', 50000)
 
 update Employees set Salary=10000 where empno=7001 --today is 25-03-24 so this will give error message:- "Due to Holi, you cannot manipulate data."
 
 delete from Employees where empno=101
 
-insert into employees (empno, ename, salary) values (1013, 'John', 50000); --when i execute this query on 26 march then it will executed
+insert into employees (empno, ename, salary) values (1013, 'John', 50000) --when i execute this query on 26 march then it will executed
 
 --select*from employees;
 
