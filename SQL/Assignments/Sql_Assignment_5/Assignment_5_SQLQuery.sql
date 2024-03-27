@@ -67,17 +67,17 @@ exec gen_slip 7001 -----Executing the Stored Procedure: gen_slip
 
 ------Below is the Ouput of above the Query--------
 
-/*(14 rows affected)
-Payslip for Employee no: 7001
+/*Payslip for Employee no: 7001, Name: Ramesh
 ---------------------------------
-Salary: 34234
-HRA: 3423.4
-DA: 6846.8
-PF: 2738.72
-IT: 1711.7
+Ramesh Salary: 34234
+Ramesh HRA: 3423.4
+Ramesh DA: 6846.8
+Ramesh PF: 2738.72
+Ramesh IT: 1711.7
 ---------------------------------
-Deductions: 4450.42
-Gross Salary: 44504.2
-Net Salary: 40053.8
+Ramesh Deductions: 4450.42
+Ramesh Gross Salary: 44504.2
+Ramesh Net Salary: 40053.8
 ---------------------------------
-Completion time: 2024-03-27T20:27:19.1042861+05:30*/
+
+Completion time: 2024-03-27T20:57:07.8019786+05:30*/
