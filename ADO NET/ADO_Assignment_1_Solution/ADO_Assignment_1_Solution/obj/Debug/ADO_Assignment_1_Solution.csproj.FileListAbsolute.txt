@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\bin\Debug\ADO_Assignment_1_Solution.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\bin\Debug\ADO_Assignment_1_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\bin\Debug\ADO_Assignment_1_Solution.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\obj\Debug\ADO_Assignment_1_Solution.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\obj\Debug\ADO_Assignment_1_Solution.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\obj\Debug\ADO_Assignment_1_Solution.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\ADO NET\ADO_Assignment_1_Solution\ADO_Assignment_1_Solution\obj\Debug\ADO_Assignment_1_Solution.pdb
