@@ -1,0 +1,7 @@
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\bin\Debug\12_April_ADO_Test.exe.config
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\bin\Debug\12_April_ADO_Test.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\bin\Debug\12_April_ADO_Test.pdb
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\obj\Debug\12_April_ADO_Test.csproj.AssemblyReference.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\obj\Debug\12_April_ADO_Test.csproj.CoreCompileInputs.cache
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\obj\Debug\12_April_ADO_Test.exe
+C:\Users\jamshers\Desktop\DotNet tutorial\Test Submission\12_April_ADO_Test\12_April_ADO_Test\obj\Debug\12_April_ADO_Test.pdb
