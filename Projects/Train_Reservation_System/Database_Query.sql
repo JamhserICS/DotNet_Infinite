@@ -9,6 +9,10 @@ create table train_details (
     "Status" varchar(20) default 'Active'
 )
 
+--ALTER TABLE train_details ADD isDeleted BIT NOT NULL DEFAULT 0;
+
+select *from train_details
+
 --table for storing train classes
 create table train_classes (
     serialNo int identity primary key,
@@ -18,8 +22,6 @@ create table train_classes (
     "3AC" float not null,
     SL float not null
 )
-ALTER TABLE train_details
-ADD isDeleted BIT NOT NULL DEFAULT 0;
 
 
 --store sear availability

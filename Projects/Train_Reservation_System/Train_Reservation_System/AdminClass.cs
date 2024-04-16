@@ -191,7 +191,7 @@ namespace Train_Reservation_System
             Console.WriteLine("All Trains:");
             foreach (var train in trains)
             {
-                Console.WriteLine($"Train No: {train.trainNo},  Name: {train.trainName},  From: {train.From},  To: {train.To},  Status: {train.Status},  Soft Deleted: {train.isDeleted}");
+                Console.WriteLine($"Train No: {train.trainNo},  Name: {train.trainName},  From: {train.From},  To: {train.To},  Status: {train.Status}");
             }
         }
 
@@ -287,15 +287,15 @@ namespace Train_Reservation_System
             // Find the train by its train number
             var train = TRDB.train_details.FirstOrDefault(td => td.trainNo == trainNumber);
 
-            // If the train exists, mark it as deleted
+            // If the train exists, mark it as Deactivated
             if (train != null)
             {
-                train.isDeleted = true;
+                train.Status = "Deactivated";
 
                 // Save changes to persist the soft delete
                 TRDB.SaveChanges();
 
-                Console.WriteLine("Train successfully soft deleted.");
+                Console.WriteLine("Train successfully Deactivated.");
             }
             else
             {

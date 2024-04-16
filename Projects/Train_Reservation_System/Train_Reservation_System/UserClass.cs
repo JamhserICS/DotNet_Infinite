@@ -288,7 +288,7 @@ namespace Train_Reservation_System
         //method for showing all trains
         static void ShowAllTrains()
         {
-            var trains = TRDB.train_details.Where(td => !td.isDeleted).ToList();
+            var trains = TRDB.train_details.Where(td => td.Status != "Deactivated").ToList();
             Console.WriteLine("All Trains:");
             foreach (var train in trains)
             {
