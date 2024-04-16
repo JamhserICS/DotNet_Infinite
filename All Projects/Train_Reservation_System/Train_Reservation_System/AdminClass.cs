@@ -40,7 +40,7 @@ namespace Train_Reservation_System
 
 
 
-       public static void adminPartOptions()
+       static void adminPartOptions()
         {
             Console.WriteLine();
             Console.WriteLine("------ADMIN DASHBOARD------");
@@ -204,7 +204,7 @@ namespace Train_Reservation_System
         }
 
         
-        public static void ShowAllTrains()
+        static void ShowAllTrains()
         {
             var trains = TRDB.train_details.ToList();
             Console.WriteLine("All Trains:");
@@ -223,7 +223,7 @@ namespace Train_Reservation_System
         }
 
 
-        public static void modifyTrain()
+        static void modifyTrain()
         {
             ShowAllTrains();
             Console.WriteLine();

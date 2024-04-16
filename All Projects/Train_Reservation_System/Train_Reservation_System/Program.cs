@@ -12,10 +12,7 @@ namespace Train_Reservation_System
         {
 
             mainFunction();
-            //UserClass.ShowAllTrains();
-            //UserClass.userPartOptions();
-            //AdminClass.ShowAllTrains();
-            //AdminClass.adminPartOptions();
+            
             Console.Read();
             
         }

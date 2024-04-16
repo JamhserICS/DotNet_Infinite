@@ -103,7 +103,7 @@ namespace Train_Reservation_System
         }
 
 
-        public static void userPartOptions()
+        static void userPartOptions()
         {
             Console.WriteLine();
             Console.WriteLine("------USER DASHBOARD------");
@@ -344,7 +344,7 @@ namespace Train_Reservation_System
         }
 
         //method for showing all trains
-        public static void ShowAllTrains()
+        static void ShowAllTrains()
         {
             var trains = TRDB.train_details.Where(td => !td.isDeleted).ToList();
             Console.WriteLine("All Trains:");
@@ -366,7 +366,7 @@ namespace Train_Reservation_System
 
 
         //method for show booked tickets
-        public static void ShowBookedTickets(int userId)
+        static void ShowBookedTickets(int userId)
         {
             var bookedTickets = TRDB.booked_ticket.Where(bt => bt.userId == userId).ToList();
 
@@ -392,7 +392,7 @@ namespace Train_Reservation_System
 
 
         //method for show all tickets Booked and Cancelled in one place
-        public static void ShowBookingCancellation(int uid)
+        static void ShowBookingCancellation(int uid)
         {
             int userId = uid;
             var cancelledTickets = TRDB.canceled_ticket.Where(t => t.userId == userId).ToList();
