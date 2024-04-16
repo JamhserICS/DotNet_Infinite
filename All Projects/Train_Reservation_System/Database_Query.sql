@@ -116,4 +116,3 @@ select * from user_details
 select * from admin_details
 select * from booked_ticket
 select * from canceled_ticket
-

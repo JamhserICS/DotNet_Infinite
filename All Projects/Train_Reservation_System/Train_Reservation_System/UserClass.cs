@@ -62,8 +62,8 @@ namespace Train_Reservation_System
         {
             try
             {
-                Console.Write("\nEnter new user id: ");
-                int uid = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter new user id: ");
+                uid = Convert.ToInt32(Console.ReadLine());
 
                 // Check if the user ID already exists
                 var checkUID = TRDB.user_details.SingleOrDefault(ud => ud.userId == uid);
@@ -174,7 +174,7 @@ namespace Train_Reservation_System
             try
             {
                 Console.Write("Enter User ID: ");
-                int uid = Convert.ToInt32(Console.ReadLine());
+                uid = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Enter Password: ");
                 string password = Console.ReadLine();
@@ -369,6 +369,7 @@ namespace Train_Reservation_System
         static void ShowBookedTickets(int userId)
         {
             var bookedTickets = TRDB.booked_ticket.Where(bt => bt.userId == userId).ToList();
+            
 
             if (bookedTickets.Count == 0)
             {
@@ -377,16 +378,18 @@ namespace Train_Reservation_System
             }
 
             Console.WriteLine("Booked Tickets:");
-            Console.WriteLine("---------------------------------------------------------------------------------");
-            Console.WriteLine("| PNR    | Train No  | Passenger Name | Class  | Fare   | Booking Date          |");
-            Console.WriteLine("---------------------------------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("| PNR    | Train No  | Train Name       | Passenger Name | From      | To        | Timing                  | Class  | Fare   | Booking Date          |");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------");
 
             foreach (var ticket in bookedTickets)
             {
-                Console.WriteLine($"| {ticket.PNR,-6} | {ticket.trainNo,-9} | {ticket.passengerName,-14} | {ticket.ticketClass,-6} | {ticket.totalFare,-6} | {ticket.bookingDateTime,-21} |");
+                var train = TRDB.train_details.FirstOrDefault(sa => sa.trainNo == ticket.trainNo);
+                
+                Console.WriteLine($"| {ticket.PNR,-6} | {ticket.trainNo,-9} | {train.trainName,-15} | {ticket.passengerName,-14} | {train.From,-9} | {train.To,-9} | {train.FromTiming} ----> {train.ToTiming,-5} | {ticket.ticketClass,-6} | {ticket.totalFare,-6} | {ticket.bookingDateTime,-21} |");
             }
 
-            Console.WriteLine("---------------------------------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
 

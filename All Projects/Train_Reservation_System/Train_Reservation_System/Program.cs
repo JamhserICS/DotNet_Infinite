@@ -13,8 +13,6 @@ namespace Train_Reservation_System
 
             mainFunction();
             
-            Console.Read();
-            
         }
 
 
