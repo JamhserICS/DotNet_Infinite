@@ -51,6 +51,8 @@
     <EntitySetMapping Name="train_details">
       <EntityTypeMapping TypeName="Train_Reservation_DBModel.train_details">
         <MappingFragment StoreEntitySet="train_details">
+          <ScalarProperty Name="ToTiming" ColumnName="ToTiming" />
+          <ScalarProperty Name="FromTiming" ColumnName="FromTiming" />
           <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
           <ScalarProperty Name="trainNo" ColumnName="trainNo" />
           <ScalarProperty Name="trainName" ColumnName="trainName" />
@@ -63,6 +65,7 @@
     <EntitySetMapping Name="user_details">
       <EntityTypeMapping TypeName="Train_Reservation_DBModel.user_details">
         <MappingFragment StoreEntitySet="user_details">
+          <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
           <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="age" ColumnName="age" />

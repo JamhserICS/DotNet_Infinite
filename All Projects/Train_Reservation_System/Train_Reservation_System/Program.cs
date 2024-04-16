@@ -10,9 +10,13 @@ namespace Train_Reservation_System
     {
         static void Main(string[] args)
         {
-            
+
             mainFunction();
-            
+            //UserClass.ShowAllTrains();
+            //UserClass.userPartOptions();
+            //AdminClass.ShowAllTrains();
+            //AdminClass.adminPartOptions();
+            Console.Read();
             
         }
 
@@ -20,7 +24,7 @@ namespace Train_Reservation_System
         public static void mainFunction()
         {
             Console.WriteLine("********************************************************************");
-            Console.WriteLine("\t------Welcome to Railway Resevation System------");
+            Console.WriteLine("         ------Welcome to Railway Resevation System------");
             Console.WriteLine("********************************************************************");
             Console.WriteLine("\n  Admin -> 1\n  User  -> 2\n  Exit  -> 0");
             Console.WriteLine();

@@ -64,6 +64,8 @@
     <Property Name="To" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" />
     <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="FromTiming" Type="varchar" MaxLength="8" />
+    <Property Name="ToTiming" Type="varchar" MaxLength="8" />
   </EntityType>
   <EntityType Name="user_details">
     <Key>
@@ -73,6 +75,7 @@
     <Property Name="userName" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="age" Type="int" />
     <Property Name="passcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="mobile_number" Type="varchar" MaxLength="20" />
   </EntityType>
   <Association Name="FK__booked_ti__train__440B1D61">
     <End Role="train_details" Type="Self.train_details" Multiplicity="0..1" />

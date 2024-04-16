@@ -26,6 +26,7 @@ namespace Train_Reservation_System
 
             if (admin != null)
             {
+                Console.Clear();
                 Console.Write("Admin login successfully...");
                 Console.WriteLine();
                 adminPartOptions();
@@ -39,9 +40,13 @@ namespace Train_Reservation_System
 
 
 
-        static void adminPartOptions()
+       public static void adminPartOptions()
         {
-            Console.Write("\n  Add Train          ->    1\n  Modify Train       ->    2\n  Soft Delete Train  ->    3\n  Show All Train     ->    4\n  Go to Home Page    ->    5\n  Exit               ->    6\n");
+            Console.WriteLine();
+            Console.WriteLine("------ADMIN DASHBOARD------");
+            
+
+            Console.Write("\n  Add Train         ->    1\n  Modify Train      ->    2\n  Soft Delete       ->    3\n  Show All Train    ->    4\n  Log Out           ->    5\n  Exit              ->    6\n");
             Console.WriteLine();
             Console.Write("Enter Your Choice : ");
             
@@ -49,8 +54,8 @@ namespace Train_Reservation_System
 
             while (!int.TryParse(Console.ReadLine(), out input) || (input < 1 || input > 6))
             {
-                Console.WriteLine();
-                Console.WriteLine("Please enter a valid option (1, 2, 3, 4, 5, 6 or 7).");
+                
+                Console.WriteLine("Please enter a valid option (1 to 6).");
                 Console.Write("Enter your choice: ");
                 
             }
@@ -58,20 +63,23 @@ namespace Train_Reservation_System
             switch (input)
             {
                 case 1:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Add Train Option Selected.............");
                     Console.WriteLine();
-                    AddTrain();
+                    AddTrain();                    
                     adminPartOptions();
                     break; 
                 case 2:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Modify Train Option Selected.............");
                     Console.WriteLine();
-                    modifyTrain();
+                    modifyTrain();                   
                     adminPartOptions();
                     break;
                 case 3:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Soft Delete Option Selected.............");
                     Console.WriteLine();
@@ -82,11 +90,13 @@ namespace Train_Reservation_System
                     Console.WriteLine();
                     Console.WriteLine(".............Show All Train Option Selected.............");
                     Console.WriteLine();
-                    ShowAllTrains();
+                    Console.Clear();
+                    ShowAllTrains();                    
                     adminPartOptions();
                     break;
                 
                 case 5:
+                    Console.Clear();
                     Program.mainFunction();
                     Console.WriteLine();
                     break;
@@ -99,7 +109,7 @@ namespace Train_Reservation_System
 
         static void AddTrain()
         {
-            Console.Write("Enter train number: ");
+            Console.Write("Enter new unique train number: ");
             int trainNo = Convert.ToInt32(Console.ReadLine());
 
             // Check if the train number already exists
@@ -107,7 +117,7 @@ namespace Train_Reservation_System
             if (existingTrain != null)
             {
                 Console.WriteLine("Train with the same number already exists.");
-                adminPartOptions();
+                AddTrain();
                 return;
             }
 
@@ -119,6 +129,12 @@ namespace Train_Reservation_System
 
             Console.Write("Enter destination: ");
             string to = Console.ReadLine();
+
+            Console.Write("Enter Departure Time(ex-09:30 AM): ");
+            string departTime = Console.ReadLine(); 
+            
+            Console.Write("Enter Arrival Time((ex-09:30 PM)): ");
+            string arrivTime = Console.ReadLine();
 
             Console.WriteLine();
             //adding classes(seat fares) and seat availability
@@ -153,7 +169,9 @@ namespace Train_Reservation_System
                 trainName = trainName,
                 From = from,
                 To = to,
-                Status = "Active" // newly added trains are active by default
+                Status = "Active", // newly added trains are active by default
+                FromTiming = departTime,
+                ToTiming=arrivTime
             };
 
 
@@ -185,17 +203,27 @@ namespace Train_Reservation_System
             Console.WriteLine("Train added successfully.");
         }
 
-        static void ShowAllTrains()
-        {           
+        
+        public static void ShowAllTrains()
+        {
             var trains = TRDB.train_details.ToList();
             Console.WriteLine("All Trains:");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("| Train No | Name            | From      | To        | Timing                  | Status      | 1AC          | 2AC          | 3AC          | Sleeper     | isDeleted |");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             foreach (var train in trains)
             {
-                Console.WriteLine($"Train No: {train.trainNo},  Name: {train.trainName},  From: {train.From},  To: {train.To},  Status: {train.Status}");
+                var saa = TRDB.seat_availability.FirstOrDefault(sa => sa.trainNo == train.trainNo);
+                // Fetch train classes for the current train
+                var tcc = TRDB.train_classes.FirstOrDefault(tc => tc.trainNo == train.trainNo);
+
+                Console.WriteLine($"| {train.trainNo,-8} | {train.trainName,-15} | {train.From,-9} | {train.To,-9} | {train.FromTiming} ----> {train.ToTiming,-5} | {train.Status,-11} | {saa.C1AC,-3} : {tcc.C1AC}rs | {saa.C2AC,-3} : {tcc.C2AC}rs | {saa.C3AC,-3} : {tcc.C3AC}rs | {saa.SL,-3} : {tcc.SL}rs | {train.isDeleted,-9} |");
             }
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
-        static void modifyTrain()
+
+        public static void modifyTrain()
         {
             ShowAllTrains();
             Console.WriteLine();
@@ -206,24 +234,38 @@ namespace Train_Reservation_System
             if (modifiedTrain == null)
             {
                 Console.WriteLine("Train not exists, Please try again!");
+                Console.WriteLine();
                 modifyTrain();
             }
 
             start:
-            Console.WriteLine("\n  Change Train Name      ->     1\n  Change Origin          ->     2\n  Change Destination     ->     3\n  Activate Train         ->     4\n  Deactivate Train       ->     5\n  Exit                   ->     6\n");
-            Console.Write("Enter your choice: ");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n  Change Train Name      ->     1\n  Change Origin          ->     2\n  Change Destination     ->     3\n  Activate Train         ->     4\n  Deactivate Train       ->     5\n  Restore Train          ->     6\n  Back                   ->     7\n");
+            Console.Write($"Enter your choice for {trainNumber}: ");
+            int choice;
 
-           
+            while (!int.TryParse(Console.ReadLine(), out choice) || (choice < 0 || choice > 7))
+            {
+                Console.WriteLine("Please enter a valid option (1 to 7).");
+                Console.Write("Enter your choice: ");               
+            }
+
 
             switch (choice)
             {
                 case 1:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Change Train Name Selected.............");
                     Console.WriteLine();
                     Console.Write("Enter new Name for Train: ");
                     string name = Console.ReadLine();
+
+                    while (name == modifiedTrain.trainName)
+                    {
+                        Console.Write("You entered same name. \nPlease enter new one: ");
+                        name = Console.ReadLine();
+                    }
+
                     modifiedTrain.trainName = name;
                     TRDB.SaveChanges();
                     Console.WriteLine();
@@ -231,11 +273,17 @@ namespace Train_Reservation_System
                     goto start;
 
                 case 2:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Change Train Origin Selected.............");
                     Console.WriteLine();
                     Console.Write("Enter new Origin for Train: ");
                     string origin = Console.ReadLine();
+                    while (origin == modifiedTrain.From)
+                    {
+                        Console.Write("You entered same origin. \nPlease enter new one: ");
+                        origin = Console.ReadLine();
+                    }
                     modifiedTrain.From = origin;
                     TRDB.SaveChanges();
                     Console.WriteLine();
@@ -243,17 +291,25 @@ namespace Train_Reservation_System
                     goto start;
 
                 case 3:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Change Train Destination Selected.............");
                     Console.WriteLine();
                     Console.Write("Enter new Destination for Train: ");
                     string destination = Console.ReadLine();
+                    while (destination == modifiedTrain.To)
+                    {
+                        Console.Write("You entered same destination. \nPlease enter new one: ");
+                        destination = Console.ReadLine();
+                    }
                     modifiedTrain.To = destination;
                     TRDB.SaveChanges();
                     Console.WriteLine();
                     ShowAllTrains();
                     goto start;
+
                 case 4:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Activate Train Selected.............");
                     Console.WriteLine();    
@@ -261,7 +317,9 @@ namespace Train_Reservation_System
                     Console.WriteLine();
                     ShowAllTrains();
                     goto start;
+
                 case 5:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".............Deactivate Train Selected.............");
                     Console.WriteLine();
@@ -269,8 +327,19 @@ namespace Train_Reservation_System
                     Console.WriteLine();
                     ShowAllTrains();
                     goto start;
+
                 case 6:
-                    Console.WriteLine("Exiting the program...");
+                    Console.Clear();
+                    Console.WriteLine();
+                    Console.WriteLine(".............Restore Train Selected.............");
+                    Console.WriteLine();
+                    restoreTrain(trainNumber);
+                    Console.WriteLine();
+                    ShowAllTrains();
+                    goto start;
+
+                case 7:
+                    Console.Clear();           
                     adminPartOptions();
                     return;
 
@@ -282,20 +351,30 @@ namespace Train_Reservation_System
         {
             ShowAllTrains();
             Console.WriteLine();
-            Console.Write("Enter train number to delete train: ");
+            Console.Write("Enter train number to soft delete train: ");
             int trainNumber = Convert.ToInt32(Console.ReadLine());
             // Find the train by its train number
             var train = TRDB.train_details.FirstOrDefault(td => td.trainNo == trainNumber);
 
-            // If the train exists, mark it as Deactivated
+            // If the train exists, mark it as deleted
             if (train != null)
             {
-                train.Status = "Deactivated";
+                if (train.isDeleted == true)
+                {
+                    Console.WriteLine("Already soft deleted.");
+                }
+                else
+                {
+                    train.isDeleted = true;
 
-                // Save changes to persist the soft delete
-                TRDB.SaveChanges();
+                    // Save changes to persist the soft delete
+                    TRDB.SaveChanges();
 
-                Console.WriteLine("Train successfully Deactivated.");
+                    Console.WriteLine("Train successfully soft deleted.");
+                    Console.Clear();
+                    ShowAllTrains();
+                }
+                
             }
             else
             {
@@ -335,6 +414,23 @@ namespace Train_Reservation_System
             else
             {
                 Console.WriteLine("Already Deactivated, Please Activate first");
+            }
+        }
+
+        //method for Restore train
+        static void restoreTrain(int trainNumber)
+        {
+
+            var restoreTrain = TRDB.train_details.SingleOrDefault(td => td.trainNo == trainNumber);
+            if (restoreTrain.isDeleted != false)
+            {
+                restoreTrain.isDeleted = false;
+                TRDB.SaveChanges();
+                Console.WriteLine("Train Successfully Restored(isDeleted->False)...");
+            }
+            else
+            {
+                Console.WriteLine("Already Restored(), Please Delete(make isDelete->True) first");
             }
         }
     }

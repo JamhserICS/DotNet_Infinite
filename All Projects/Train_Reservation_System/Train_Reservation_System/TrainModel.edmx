@@ -69,6 +69,8 @@
           <Property Name="To" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="FromTiming" Type="varchar" MaxLength="8" />
+          <Property Name="ToTiming" Type="varchar" MaxLength="8" />
         </EntityType>
         <EntityType Name="user_details">
           <Key>
@@ -78,6 +80,7 @@
           <Property Name="userName" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="age" Type="int" />
           <Property Name="passcode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="mobile_number" Type="varchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK__booked_ti__train__440B1D61">
           <End Role="train_details" Type="Self.train_details" Multiplicity="0..1" />
@@ -268,6 +271,8 @@
           <NavigationProperty Name="seat_availability" Relationship="Self.FK__seat_avai__train__3C69FB99" FromRole="train_details" ToRole="seat_availability" />
           <NavigationProperty Name="train_classes" Relationship="Train_Reservation_DBModel.FK__train_cla__train__398D8EEE" FromRole="train_details" ToRole="train_classes" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="FromTiming" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ToTiming" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="user_details">
           <Key>
@@ -279,6 +284,7 @@
           <Property Name="passcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="booked_ticket" Relationship="Self.FK__booked_ti__userI__4316F928" FromRole="user_details" ToRole="booked_ticket" />
           <NavigationProperty Name="canceled_ticket" Relationship="Self.FK__canceled___userI__47DBAE45" FromRole="user_details" ToRole="canceled_ticket" />
+          <Property Name="mobile_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__booked_ti__train__440B1D61">
           <End Role="train_details" Type="Self.train_details" Multiplicity="0..1" />
@@ -469,6 +475,8 @@
           <EntitySetMapping Name="train_details">
             <EntityTypeMapping TypeName="Train_Reservation_DBModel.train_details">
               <MappingFragment StoreEntitySet="train_details">
+                <ScalarProperty Name="ToTiming" ColumnName="ToTiming" />
+                <ScalarProperty Name="FromTiming" ColumnName="FromTiming" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="trainNo" ColumnName="trainNo" />
                 <ScalarProperty Name="trainName" ColumnName="trainName" />
@@ -481,6 +489,7 @@
           <EntitySetMapping Name="user_details">
             <EntityTypeMapping TypeName="Train_Reservation_DBModel.user_details">
               <MappingFragment StoreEntitySet="user_details">
+                <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="age" ColumnName="age" />

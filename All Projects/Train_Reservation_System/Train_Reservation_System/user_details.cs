@@ -25,6 +25,7 @@ namespace Train_Reservation_System
         public string userName { get; set; }
         public Nullable<int> age { get; set; }
         public string passcode { get; set; }
+        public string mobile_number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<booked_ticket> booked_ticket { get; set; }

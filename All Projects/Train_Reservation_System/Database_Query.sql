@@ -10,6 +10,8 @@ create table train_details (
 )
 
 --ALTER TABLE train_details ADD isDeleted BIT NOT NULL DEFAULT 0;
+--ALTER TABLE train_details ADD FromTiming VARCHAR(8), ToTiming VARCHAR(8);
+
 
 select *from train_details
 
@@ -44,6 +46,8 @@ create table user_details (
     age int,
     passcode varchar(20) not null
 )
+
+--ALTER TABLE user_details ADD mobile_number VARCHAR(20);
 
 
 --admin details table to store admin data

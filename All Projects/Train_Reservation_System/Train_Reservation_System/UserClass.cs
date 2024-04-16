@@ -51,7 +51,7 @@ namespace Train_Reservation_System
                     // old user login
                     oldUserLogin();
                     Console.WriteLine();
-                    userPartOptions();
+                    
                     
                     break;
             }
@@ -60,30 +60,54 @@ namespace Train_Reservation_System
         //method for user registration
         static void userDetailsFun()
         {
-            Console.Write("\nEnter new user id: ");
-            uid = Convert.ToInt32(Console.ReadLine());
-            var checkUID = TRDB.user_details.SingleOrDefault(ud => ud.userId == uid);
-            if (checkUID != null)
+            try
             {
-                Console.WriteLine("User ID is already Exists...");
-                userDetailsFun();
-            }
+                Console.Write("\nEnter new user id: ");
+                int uid = Convert.ToInt32(Console.ReadLine());
 
-            ud.userId = uid;
-            Console.Write("\nEnter Name : ");
-            ud.userName = Console.ReadLine();
-            Console.Write("\nEnter Age : ");
-            ud.age = int.Parse(Console.ReadLine());
-            Console.Write("\nEnter Passcode : ");
-            ud.passcode = Console.ReadLine();
-            TRDB.user_details.Add(ud);
-            TRDB.SaveChanges();
-            Console.Write("Successfully Registered!");
+                // Check if the user ID already exists
+                var checkUID = TRDB.user_details.SingleOrDefault(ud => ud.userId == uid);
+                if (checkUID != null)
+                {
+                    Console.WriteLine("User ID already exists.");
+                    userDetailsFun(); 
+                    return;
+                }
+
+                ud.userId = uid;
+                Console.Write("Enter Name : ");
+                ud.userName = Console.ReadLine();
+                Console.Write("Enter Age : ");
+                ud.age = int.Parse(Console.ReadLine());
+                Console.Write("Enter Passcode : ");
+                ud.passcode = Console.ReadLine();
+
+                Console.Write("Enter your WhatsApp number: ");                                          
+                ud.mobile_number= Console.ReadLine();
+
+                TRDB.user_details.Add(ud);
+                TRDB.SaveChanges();
+                Console.Clear();
+                Console.WriteLine("Successfully Registered!");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid numeric user ID and age.");
+                userDetailsFun(); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                
+            }
         }
 
-        static void userPartOptions()
+
+        public static void userPartOptions()
         {
-            Console.Write("\n  Book Ticket        ->    1\n  Booked Ticket      ->    2\n  Cancel Ticket      ->    3\n  Your All Tickets   ->    4\n  Go to Home Page    ->    5\n  Exit               ->    6\n");
+            Console.WriteLine();
+            Console.WriteLine("------USER DASHBOARD------");
+            Console.Write("\n  Book Ticket        ->    1\n  Booked Ticket      ->    2\n  Cancel Ticket      ->    3\n  Cancelled Tickets  ->    4\n  Log Out            ->    5\n  Exit               ->    6\n");
             Console.WriteLine();
             Console.Write("Enter Your Choice : ");
             int input;
@@ -97,6 +121,7 @@ namespace Train_Reservation_System
             switch (input)
             {
                 case 1:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".................Book Ticket Selected.................");
                     Console.WriteLine();
@@ -105,13 +130,15 @@ namespace Train_Reservation_System
                     userPartOptions();
                     break; // Exit the program
                 case 2:
+                    Console.Clear();
                     Console.WriteLine();
-                    Console.WriteLine(".................Booked Ticket Selected.................");
+                    Console.WriteLine(".................Show Booked Ticket Selected.................");
                     Console.WriteLine();
                     ShowBookedTickets(uid);                    
                     userPartOptions();
                     break;
                 case 3:
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(".................Cancel Ticket Selected.................");
                     Console.WriteLine();
@@ -120,14 +147,16 @@ namespace Train_Reservation_System
                     break;
 
                 case 4:
+                    Console.Clear();
                     Console.WriteLine();
-                    Console.WriteLine(".................Show All Tickets.................");
+                    Console.WriteLine(".................Show Cancelled Ticket Selected.................");
                     Console.WriteLine();
                     ShowBookingCancellation(uid);
                     userPartOptions();
                     break;
 
                 case 5:
+                    Console.Clear();
                     Program.mainFunction();
                     Console.WriteLine();
                     break;
@@ -142,19 +171,37 @@ namespace Train_Reservation_System
         //Existing user login
         static void oldUserLogin()
         {
-            Console.Write("Enter User ID: ");
-            uid = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Password: ");
-            string password = Console.ReadLine();
+            try
+            {
+                Console.Write("Enter User ID: ");
+                int uid = Convert.ToInt32(Console.ReadLine());
 
-            var user = TRDB.user_details.FirstOrDefault(ud => ud.userId == uid && ud.passcode == password);
-            if (user != null)
-            {
-                Console.WriteLine($"Welcome, {user.userName}!");
+                Console.Write("Enter Password: ");
+                string password = Console.ReadLine();
+
+                var user = TRDB.user_details.FirstOrDefault(ud => ud.userId == uid && ud.passcode == password);
+
+                if (user != null)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Welcome, {user.userName}!");
+                    userPartOptions();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid username or password.");
+                    oldUserLogin();
+                }
             }
-            else
+            catch (FormatException)
             {
-                Console.WriteLine("Invalid username or password.");
+                Console.WriteLine("Invalid input. Please enter a valid numeric user ID.");
+                oldUserLogin();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // You can handle specific exceptions here based on your requirements
             }
         }
 
@@ -165,15 +212,6 @@ namespace Train_Reservation_System
             Console.Write("Enter train number: ");
             int trainNo = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter passenger name: ");
-            string passengerName = Console.ReadLine();
-
-            Console.Write("Enter passenger age: ");
-            int passengerAge = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter ticket class (1AC, 2AC, 3AC, SL): ");
-            string ticketClass = Console.ReadLine().ToUpper();
-
             // Check if the train is active
             var train = TRDB.train_details.FirstOrDefault(td => td.trainNo == trainNo && td.Status == "Active");
             if (train == null)
@@ -181,6 +219,16 @@ namespace Train_Reservation_System
                 Console.WriteLine("Sorry, this train is not active.");
                 return;
             }
+
+            Console.Write("Enter passenger name: ");
+            string passengerName = Console.ReadLine();
+
+            Console.Write("Enter passenger age: ");
+            int passengerAge = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter ticket class (1AC, 2AC, 3AC, SL): ");
+            string ticketClass = Console.ReadLine().ToUpper();           
+
 
             // Check seat availability
             var seatAvailability = TRDB.seat_availability.FirstOrDefault(sa => sa.trainNo == trainNo);
@@ -198,6 +246,7 @@ namespace Train_Reservation_System
             UpdateSeatAvailability(seatAvailability, ticketClass);
 
 
+
             // Add booked ticket to the database
             var newTicket = new booked_ticket
             {
@@ -212,7 +261,7 @@ namespace Train_Reservation_System
             };
 
             TRDB.booked_ticket.Add(newTicket);
-            TRDB.SaveChanges();
+            TRDB.SaveChanges();            
 
             Console.WriteLine("Ticket booked successfully.");
         }
@@ -239,14 +288,23 @@ namespace Train_Reservation_System
 
         static void CancelTicket()
         {
-            Console.Write("Enter your user ID:");
-            int userId = Convert.ToInt32(Console.ReadLine());
+            
+            int userId = uid;
+            var ticket = TRDB.booked_ticket.FirstOrDefault(bt => bt.userId == userId);
+            if (ticket == null)
+            {
+                Console.WriteLine("No booked ticket for cancel, Please book the tickets");
+                userPartOptions();
+                return;
+            }
 
-            Console.Write("Enter PNR (Passenger Name Record) number:");
+            ShowBookedTickets(uid);
+
+            Console.Write("Enter PNR number:");
             int pnr = Convert.ToInt32(Console.ReadLine());
 
             // Find the booked ticket
-            var ticket = TRDB.booked_ticket.FirstOrDefault(bt => bt.PNR == pnr && bt.userId == userId);
+            //var ticket = TRDB.booked_ticket.FirstOrDefault(bt => bt.PNR == pnr && bt.userId == userId);
             if (ticket == null)
             {
                 Console.WriteLine("No ticket found with the specified PNR number.");
@@ -286,19 +344,29 @@ namespace Train_Reservation_System
         }
 
         //method for showing all trains
-        static void ShowAllTrains()
+        public static void ShowAllTrains()
         {
-            var trains = TRDB.train_details.Where(td => td.Status != "Deactivated").ToList();
+            var trains = TRDB.train_details.Where(td => !td.isDeleted).ToList();
             Console.WriteLine("All Trains:");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("| Train No | Name            | From      | To        | Timing                  | Status      | 1AC          | 2AC          | 3AC          | Sleeper     |");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------");
             foreach (var train in trains)
             {
+                var saa = TRDB.seat_availability.FirstOrDefault(sa => sa.trainNo == train.trainNo);
+                // Fetch train classes for the current train
+                var tcc = TRDB.train_classes.FirstOrDefault(tc => tc.trainNo == train.trainNo);
 
-                Console.WriteLine($"Train No: {train.trainNo},  Name: {train.trainName},  From: {train.From},  To: {train.To},  Status: {train.Status}");
+                Console.WriteLine($"| {train.trainNo,-8} | {train.trainName,-15} | {train.From,-9} | {train.To,-9} | {train.FromTiming} ----> {train.ToTiming,-5} | {train.Status,-11} | {saa.C1AC,-3} : {tcc.C1AC}rs | {saa.C2AC,-3} : {tcc.C2AC}rs | {saa.C3AC,-3} : {tcc.C3AC}rs | {saa.SL,-3} : {tcc.SL}rs |");
             }
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
+
+
+
         //method for show booked tickets
-        static void ShowBookedTickets(int userId)
+        public static void ShowBookedTickets(int userId)
         {
             var bookedTickets = TRDB.booked_ticket.Where(bt => bt.userId == userId).ToList();
 
@@ -309,32 +377,45 @@ namespace Train_Reservation_System
             }
 
             Console.WriteLine("Booked Tickets:");
+            Console.WriteLine("---------------------------------------------------------------------------------");
+            Console.WriteLine("| PNR    | Train No  | Passenger Name | Class  | Fare   | Booking Date          |");
+            Console.WriteLine("---------------------------------------------------------------------------------");
+
             foreach (var ticket in bookedTickets)
             {
-                Console.WriteLine($"PNR: {ticket.PNR}, Train No: {ticket.trainNo}, Passenger Name: {ticket.passengerName}, Class: {ticket.ticketClass}, Fare: {ticket.totalFare}, Booking Date: {ticket.bookingDateTime}");
+                Console.WriteLine($"| {ticket.PNR,-6} | {ticket.trainNo,-9} | {ticket.passengerName,-14} | {ticket.ticketClass,-6} | {ticket.totalFare,-6} | {ticket.bookingDateTime,-21} |");
             }
+
+            Console.WriteLine("---------------------------------------------------------------------------------");
         }
+
 
 
         //method for show all tickets Booked and Cancelled in one place
-        static void ShowBookingCancellation(int uid)
+        public static void ShowBookingCancellation(int uid)
         {
             int userId = uid;
+            var cancelledTickets = TRDB.canceled_ticket.Where(t => t.userId == userId).ToList();
 
-            var bookedTickets = TRDB.booked_ticket.Where(bt => bt.userId == userId).ToList();
-            Console.WriteLine("Booked Tickets:");
-            foreach (var ticket in bookedTickets)
+            if (cancelledTickets.Count == 0)
             {
-                Console.WriteLine($"PNR: {ticket.PNR}, Train No: {ticket.trainNo}, Passenger Name: {ticket.passengerName}, Class: {ticket.ticketClass}, Fare: {ticket.totalFare}, Booking Date: {ticket.bookingDateTime}");
+                Console.WriteLine("No cancelled tickets found for the specified user.");
+                return;
             }
 
-            var cancelledTickets = TRDB.canceled_ticket.Where(t => t.userId == userId).ToList();
             Console.WriteLine("Cancelled Tickets:");
+            Console.WriteLine("-------------------------------------------------------------------------------");
+            Console.WriteLine("| Cancelled ID  | PNR   | Train No  | Cancellation Date       | Refund Amount |");
+            Console.WriteLine("-------------------------------------------------------------------------------");
+
             foreach (var ticket in cancelledTickets)
             {
-                Console.WriteLine($"Cancelled ID: {ticket.canceledId}, PNR: {ticket.canceledId}, Train No: {ticket.trainNo}, Cancellation Date: {ticket.cancellationDateTime}, Refund Amount: {ticket.refundAmount}");
+                Console.WriteLine($"| {ticket.canceledId,-13} | {ticket.canceledId,-5} | {ticket.trainNo,-9} | {ticket.cancellationDateTime,-23} | {ticket.refundAmount,-13} |");
             }
+
+            Console.WriteLine("-------------------------------------------------------------------------------");
         }
+
 
         static bool HasAvailableSeats(seat_availability seatAvailability, string ticketClass)
         {

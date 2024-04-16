@@ -29,6 +29,8 @@ namespace Train_Reservation_System
         public string To { get; set; }
         public string Status { get; set; }
         public bool isDeleted { get; set; }
+        public string FromTiming { get; set; }
+        public string ToTiming { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<booked_ticket> booked_ticket { get; set; }
